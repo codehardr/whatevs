@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #222;
+  color: #ccc;
+  font-family: sans-serif;
+}
+
+body > div {
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.one {
+  background-image: url("../img/1.png");
+}
+
+h1 {
+  padding: 70px;
+  backdrop-filter: blur(5px) grayscale(100%);
+  font-size: 10vw;
+  background-image: linear-gradient(#cfff22, #4069e7, #c7374f);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: 2s header;
+}
+
+.one p {
+  font-size: 5vw;
+  background-color: #000;
+  padding: 10px 20px;
+  border-radius: 200px;
+
+  animation: 2s arrow 3 ease-in, 3s appear;
+}
+
+.two {
+  background-image: url("../img/2.jpg");
+  background-attachment: fixed;
+}
+
+h2 {
+  font-size: 7vw;
+}
+
+h2 span {
+  color: white;
+  text-shadow: 0 0 7px white;
+  animation: 1s pulse infinite alternate;
+}
+
+.works {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.work {
+  /* background-color: #000; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 50px;
+  background-image: linear-gradient(white, transparent);
+  backdrop-filter: blur(5px) brightness(100%);
+}
+
+.work img {
+  width: 20vw;
+  height: 20vw;
+  object-fit: cover;
+  object-position: center;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  filter: grayscale(100%) brightness(90%);
+
+  transition: all 0.2s;
+}
+
+.work img:hover {
+  transform: scale(1.1) rotate(-5deg);
+  filter: grayscale(0) brightness(100%);
+}
+
+.work a {
+  background-color: #111;
+  color: #ccc;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  border: 5px solid transparent;
+  border-radius: 100px 0 100px 0;
+  transition: all 0.2s;
+}
+
+.work a:hover {
+  color: white;
+
+  border: 5px solid white;
+  padding: 15px 60px;
+}
+
+.three {
+  background-image: url("../img/3.jpg");
+}
+
+@keyframes arrow {
+  0% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes header {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  80% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 0px white;
+  }
+  100% {
+    text-shadow: 0 0 10px white;
+  }
+}
